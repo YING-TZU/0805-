@@ -1,0 +1,18 @@
+<launch>
+  
+    <!-- Launch Gazebo  -->
+    <include file="$(find brrobot_gazebo)/launch/brrobot/brrobot_gazebo_world.launch" />
+
+    <!-- ros_control arm launch file -->
+    <include file="$(find brrobot_gazebo)/launch/brrobot/brrobot_gazebo_states.launch" />   
+
+    <!-- ros_control trajectory control dof arm launch file -->
+    <include file="$(find brrobot_gazebo)/launch/brrobot/brrobot_trajectory_controller.launch" />
+
+    <!-- moveit launch file -->
+    <include file="$(find brrobot_moveit_config)/launch/moveit_planning_execution.launch">
+        < arg name="gazebo" default="true" />
+    </include>
+
+</launch>
+
