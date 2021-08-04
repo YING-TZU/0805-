@@ -1,0 +1,8 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"grinding" [label="grinding"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "fixed" [label="xyz: 0.8 0.565 0 \nrpy: 0 0 -1.57"]
+"fixed" -> "grinding"
+}

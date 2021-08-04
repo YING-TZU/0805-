@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="SBIRgrinding">
+  <link
+    name="world"/>
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+    </inertial>
+  <joint
+    name="fixed"
+    type="fixed">
+    <origin
+      xyz="0.800 0.565 0"
+      rpy="0 0 -1.57" />
+    <parent
+      link="world" />
+    <child
+      link="grinding" />
+  </joint>
+  <link
+    name="grinding">
+    <inertial>
+      <origin
+        xyz="0.800 0.565 0"
+        rpy="0 0 -1.57" />
+      <mass
+        value="50.043" />
+      <inertia
+        ixx="10"
+        ixy="0"
+        ixz="0"
+        iyy="10"
+        iyz="0"
+        izz="10" />
+    </inertial>
+    <visual>
+      <pose>0.800 0.565 0 0 0 -1.57</pose>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://grinding/meshes/SBIRgrinding.STL" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://grinding/meshes/SBIRgrinding.STL" scale="0.001 0.001 0.001"  />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Gazebo-specific link properties  -->
+  <gazebo reference="grinding">
+    <material>Gazebo/Orange</material>
+    <turnGravityOff>True</turnGravityOff>
+  </gazebo>
+</robot>
